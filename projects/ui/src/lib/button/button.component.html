@@ -1,0 +1,20 @@
+<button
+  [type]="type"
+  class="bg-blueIon-500 flex items-center relative text-center justify-center py-2 font-bold focus:outline-none px-4 text-white text-base transition-all duration-200 ease-in-out {{
+    classCss
+  }}"
+  [disabled]="disabled"
+  (click)="clickButton()"
+  [ngClass]="{
+    'cursor-pointer': !disabled,
+    'opacity-50': disabled || loading,
+    'cursor-not-allowed': disabled,
+    'cursor-wait': loading
+  }">
+  <div
+    [ngClass]="{ hidden: disabled }"
+    class="absolute h-full hover:bg-black hover:bg-opacity-10 w-full"></div>
+  <i class="fa fa-spinner fa-spin"></i>
+  <!-- <fa-icon *ngIf="loading" [icon]="faCircle" class="fa-spin mr-1"></fa-icon> -->
+  <span class="text-blueIon-100 {{ classCssText }}">{{ text }}</span>
+</button>

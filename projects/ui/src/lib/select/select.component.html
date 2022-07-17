@@ -1,0 +1,46 @@
+<div *ngIf="title">
+  <p class="mb-2" class="{{ titleCssClass }}">{{ title }}</p>
+</div>
+<div class="{{ className }} flex items-center justify-center w-full">
+  <div
+    class="cursor-pointer block float-left w-full pl-2 relative border-b hover:bg-gray-50"
+    [ngClass]="{ open: showOptions }"
+    (click)="openOptions()">
+    <div class="flex justify-between items-center py-1">
+      <span
+        class="border-whiteIon-600 text-whiteIon-200"
+        *ngIf="placeholder && !optionSelected"
+        >{{ placeholder }}</span
+      >
+      <span
+        class="border-whiteIon-600 jhjhjhjhjhjh"
+        [attr.value-selected]="optionSelected?.value"
+        >{{ optionSelected?.label }}</span
+      >
+      <span class="ml-3 w-4 pt-1">
+        <!-- <fa-icon [icon]="faChevronDown" *ngIf="!showOptions"></fa-icon>
+        <fa-icon [icon]="faChevronUp" *ngIf="showOptions"></fa-icon> -->
+      </span>
+    </div>
+
+    <div
+      class="absolute overflow-auto top-full left-0 bg-whiteIon-0 z-max w-full max-h-96 duration-150 scale-75 opacity-0 mt-1 shadow-lg"
+      [ngClass]="{
+        'scale-100 opacity-100': showOptions,
+        hidden: !showOptions
+      }">
+      <ul class="p-0">
+        <li
+          *ngFor="let item of values?.options; index as i"
+          [attr.data-index]="i"
+          (click)="clickSelect(i)"
+          class="cursor-pointer hover:bg-whiteIon-100 py-2 pl-2"
+          [ngClass]="{
+            'border-l-4  border-greenIon-100 bg-whiteIon-50': item.selected
+          }">
+          {{ item.label }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
