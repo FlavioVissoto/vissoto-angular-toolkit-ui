@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Position } from './interface/position.enum';
 
@@ -8,11 +8,11 @@ import { Position } from './interface/position.enum';
   styleUrls: ['./tooltip.component.scss'],
 })
 export class TooltipComponent {
-  @Input() text: string;
+  @Input() text = '';
   @Input() position: Position = Position.top;
   showTooltip = false;
 
-  overTooltip(event: MouseEvent): void {
+  overTooltip(): void {
     this.showTooltip = !this.showTooltip;
   }
 }
