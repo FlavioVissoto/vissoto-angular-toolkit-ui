@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run tailwind && ng build ui && cd dist/ui && npm pack",
+    "build": "npm run tailwind && ng build",
+    "build:local": "npm run tailwind && ng build && npm run pack",
+    "publish": "npm run build && cd dist && npm publish --access public",
     "watch": "ng build --watch --configuration development",
     "test": "npx jest --no-cache",
     "lint": "eslint . --ext .ts",

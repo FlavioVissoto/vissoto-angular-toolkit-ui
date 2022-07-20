@@ -9,3 +9,6 @@ export * from './lib/select/select.module';
 export * from './lib/tab/interface/tab.interface';
 export * from './lib/tab/tab.component';
 export * from './lib/tab/tab.module';
+
+export * from './lib/tooltip/tooltip.component';
+export * from './lib/tooltip/tooltip.module';
