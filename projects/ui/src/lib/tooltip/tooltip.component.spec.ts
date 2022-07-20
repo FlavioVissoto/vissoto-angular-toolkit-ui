@@ -92,9 +92,7 @@ describe('TooltipComponent', () => {
     expect(elem).toContain('show');
     expect(elem).toContain('tooltip-left');
     expect(
-      fixture.nativeElement
-        .querySelector('.tooltip .tooltip-drop')
-        .textContent.trim()
+      fixture.nativeElement.querySelector('.tooltip .tooltip-drop').textContent
     ).toEqual('vissoto');
   });
 });
