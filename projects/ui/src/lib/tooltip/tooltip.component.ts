@@ -5,7 +5,11 @@ import { Position } from './interface/position.enum';
 @Component({
   selector: 'vat-tooltip',
   templateUrl: './tooltip.component.html',
-  styleUrls: ['./tooltip.component.scss'],
+  styleUrls: [
+    './../../assets/css/tailwind.css',
+    './../../assets/css/tailwind-custom.scss',
+    './tooltip.component.scss',
+  ],
 })
 export class TooltipComponent {
   @Input() text = '';
