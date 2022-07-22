@@ -1,18 +1,7 @@
 <div
-  class="px-4 py-2 h-full shadow-sm ring-1 ring-whiteIon-300/10 hover:shadow-xl duration-500 cursor-pointer space-y-2"
+  class="w-1/4 border-solid border border-slate-900/10 cursor-pointer rounded duration-500 shadow hover:shadow-2xl"
   (click)="clickCard()">
-  <div *ngIf="card?.image">
-    <span class="inline-flex items-center pt-2">
-      <img
-        class="{{ card.image.cssClass }}"
-        src="{{ card.image.src }}"
-        alt="{{ card.image.alt }}"
-        width="{{ card.image.width ? card.image.width + '%' : '' }}"
-        height="{{ card.image.height ? card.image.height + '%' : '' }}" />
-    </span>
-  </div>
-  <h3 class="font-semibold">{{ card.title }}</h3>
-  <ng-content></ng-content>
-  <!--<p class="text-sm">{{ card.message }}</p>
-  <p class="text-slate-500 text-sm">{{ card.messageFooter }}</p> -->
+  <img [src]="imageSrc" alt="" class="rounded object-cover" />
+  <h3 class="w-full text-center mt-4 underline">{{ title }}</h3>
+  <p class="text-xs py-4 text-center">{{ message }}</p>
 </div>

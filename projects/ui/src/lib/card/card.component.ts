@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Card } from './interface/card.interface';
-import { Image } from './../interface/image.interface';
 
 @Component({
   selector: 'vat-card',
@@ -16,29 +15,19 @@ export class CardComponent implements OnInit {
   @Input() card: Card;
   @Input() title: string;
   @Input() message: string;
-  @Input() messageFooter: string;
-  @Input() image: Image;
-
-  @Input() disabled = false;
-  @Input() loading = false;
+  @Input() imageSrc: string;
 
   @Output() clickedButton = new EventEmitter();
 
   ngOnInit(): void {
-    if (!this.card) {
-      this.card = {
-        image: this.image,
-        title: this.title,
-        message: this.message,
-        messageFooter: this.messageFooter,
-      } as Card;
+    if (this.card) {
+      this.title = this.card.title;
+      this.message = this.card.message;
+      this.imageSrc = this.card.imageSrc;
     }
   }
 
   clickCard(): void {
-    if (this.loading || this.disabled) {
-      return;
-    }
     this.clickedButton.emit(true);
   }
 }
