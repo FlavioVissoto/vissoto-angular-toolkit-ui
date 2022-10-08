@@ -1,0 +1,14 @@
+<div
+  class="tooltip flex items-center relative">
+  <span
+    class="tooltip-drop absolute w-max py-1.5 px-3 text-xs text-left z-10 rounded-sm bg-slate-600 text-gray-100 pointer-events-none"
+    [ngClass]="{
+      'tooltip-top': position == 0,
+      'tooltip-right': position == 1,
+      'tooltip-bottom': position == 2,
+      'tooltip-left': position == 3
+    }"
+    >{{ text }}</span
+  >
+  <ng-content></ng-content>
+</div>
