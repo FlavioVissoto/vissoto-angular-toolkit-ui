@@ -1,15 +1,15 @@
-<div class="flex justify-around">
-  <ul class="flex space-x-8">
-    <li
-      *ngFor="let tab of Tabs; let i = index"
-      (click)="clickTab(tab)"
-      class="cursor-pointer py-4 hover:bg-whiteIon-100 border-b-4"
-      [ngClass]="{
-        'border-greenIon-100 font-semibold': tab.selected,
-        'border-transparent hover:border-greenIon-200': !tab.selected
-      }">
-      <!-- <fa-icon *ngIf="tab.icon" [icon]="tab.icon"></fa-icon> -->
-      {{ tab.text }}
+<div *ngIf="itens && itens.length > 0" class="border-b border-gray-200 dark:border-gray-700">
+  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+    <li class="mr-2" *ngFor="let item of itens" data-id="{{item.id}}">
+      <a (click)="click(item)" class="inline-flex p-4 group" [ngClass]="{'border-b-2 border-transparent cursor-pointer':!item.disabled,
+                          'text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500': item.disabled,
+                          'text-blue-600 border-blue-600 hover:border-blue-800 hover:text-blue-800': item.selected && !item.disabled,
+                          'hover:text-gray-600 hover:border-gray-300': !item.selected && !item.disabled}">
+        <img *ngIf="item.img" [src]="item.img.src" [alt]="item.img.alt" [width]="item.img.width"
+          [height]="item.img.height" class="mr-2 w-5 h-5 {{item.img.cssClass}}" [ngClass]="{'': item.selected && !item.disabled,
+                              'hover:text-gray-600 hover:border-gray-300': !item.selected && !item.disabled}">
+        {{item.text}}
+      </a>
     </li>
   </ul>
 </div>

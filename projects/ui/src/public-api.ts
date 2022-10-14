@@ -20,7 +20,7 @@ export * from './lib/select/interfaces/select.interface';
 export * from './lib/select/select.component';
 export * from './lib/select/select.module';
 /** Tab */
-export * from './lib/tab/interface/tab.interface';
+export * from './lib/tab/interfaces/tab.interface';
 export * from './lib/tab/tab.component';
 export * from './lib/tab/tab.module';
 /** Tooltip */

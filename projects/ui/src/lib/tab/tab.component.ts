@@ -1,32 +1,23 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Tab } from './interface/tab.interface';
+import { TabItem } from './interfaces/tab.interface';
 
 @Component({
   selector: 'vat-tab',
   templateUrl: './tab.component.html',
 })
 export class TabComponent {
-  @Input() Tabs: Tab[] = [];
+  @Input() itens: TabItem[];
 
-  /**
-   * Evento disparado quando usuário selecionar um item.
-   */
-  @Output() clickedTab = new EventEmitter<Tab>();
+  @Output() byClicked = new EventEmitter<TabItem>();
 
-  /**
-   *
-   * @param tab Item selecionado pelo usuário no template.
-   */
-  clickTab(tab: Tab): void {
-    this.setSelected(tab);
-    this.clickedTab.emit(tab);
-  }
-
-  setSelected(tab: Tab): void {
-    for (let index = 0; index < this.Tabs.length; index++) {
-      this.Tabs[index].selected =
-        this.Tabs[index].id === tab.id && this.Tabs[index].text === tab.text;
+  click(value: TabItem): void {
+    if (!value.disabled) {
+      this.itens = this.itens.map((x) => ({
+        ...x,
+        selected: x.id == value.id,
+      }));
+      this.byClicked.emit(value);
     }
   }
 }
