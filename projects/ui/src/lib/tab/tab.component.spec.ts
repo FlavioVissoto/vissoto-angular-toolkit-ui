@@ -1,95 +1,99 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { By } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { TabItem } from './interfaces/tab.interface';
 
-const mockIcoTab: TabItem[] = [
-  {
-    selected: true,
-    text: 'android',
-    id: '0',
-  },
-  {
-    selected: false,
-    text: 'ios',
-    id: '1',
-  },
-  {
-    selected: false,
-    text: 'backend',
-    id: '0',
-  },
-];
-
 describe('TabComponent', () => {
   let component: TabComponent;
   let fixture: ComponentFixture<TabComponent>;
+
+  const mockItem = [
+    {
+      id: '01',
+      text: 'item 01',
+      selected: true,
+      disabled: false,
+    },
+    {
+      id: '02',
+      text: 'item 02',
+      selected: false,
+      disabled: false,
+    },
+  ] as TabItem[];
+
+  const mockHTMLElement = {
+    offsetWidth: 450,
+    style: {
+      width: '450px',
+    } as CSSStyleDeclaration,
+  } as HTMLElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [TabComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(TabComponent);
+    component = fixture.componentInstance;
+    component.itens = mockItem;
+    fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+    jest.clearAllMocks();
   });
 
   test('should create component', () => {
-    fixture = TestBed.createComponent(TabComponent);
-    component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 
-  test('should tab names', () => {
-    fixture = TestBed.createComponent(TabComponent);
-    component = fixture.componentInstance;
-    component.itens = mockIcoTab;
-    fixture.detectChanges();
-
-    const listTabNames = fixture.debugElement.queryAll(By.css('ul li'));
-    expect(listTabNames[0].nativeElement.textContent.trim()).toEqual(
-      mockIcoTab[0].text
-    );
-    expect(listTabNames[1].nativeElement.textContent.trim()).toEqual(
-      mockIcoTab[1].text
-    );
-    expect(listTabNames[2].nativeElement.textContent.trim()).toEqual(
-      mockIcoTab[2].text
-    );
-  });
-
-  test('should emit tab on click', () => {
-    fixture = TestBed.createComponent(TabComponent);
-    component = fixture.componentInstance;
-    component.itens = mockIcoTab;
-    fixture.detectChanges();
-    const firstTabNames = fixture.debugElement.query(
-      By.css('ul li:first-child')
-    );
-
-    component.byClicked.subscribe((tab: TabItem) => {
-      expect(tab.text).toEqual(mockIcoTab[0].text);
+  test('click', () => {
+    fixture.nativeElement
+      .querySelector('nav ul li[data-id-tab="' + mockItem[0].id + '"]')
+      .click();
+    component.click(mockItem[0]);
+    component.byClick.subscribe({
+      next: (x: TabItem) => {
+        expect(x.id).toEqual(mockItem[0].id);
+      },
     });
-
-    firstTabNames.triggerEventHandler('click', null);
+    fixture.detectChanges();
   });
 
-  test('should set tab clicked', () => {
-    fixture = TestBed.createComponent(TabComponent);
-    component = fixture.componentInstance;
-    component.itens = mockIcoTab;
-    fixture.detectChanges();
-    const firstTabNames = fixture.debugElement.query(
-      By.css('ul li:nth-child(2)')
-    );
+  test('getSizeTab fixedWidth', () => {
+    component.fixedWidth = 250;
+    component.onResize();
+    expect(component.widthTab).toEqual('250px');
+  });
 
-    firstTabNames.triggerEventHandler('click', null);
+  test('getSizeTab maxWidthPx', () => {
+    component.maxWidthPx = 250;
+    //component.maxWidthElement = mockHTMLElement;
+    component.onResize();
+    expect(component.maxWidthTab).toEqual('250px');
+  });
 
-    component.click(mockIcoTab[1]);
+  test('getSizeTab maxWidthElement and maxWidthPx', () => {
+    component.maxWidthPx = 250;
+    component.maxWidthElement = mockHTMLElement;
+    component.onResize();
+    expect(component.maxWidthTab).toEqual('250px');
+  });
 
-    expect(
-      mockIcoTab[1].id ===
-        component.itens.filter((x) => x.id === mockIcoTab[1].id)[0].id
-    );
+  test('getSizeTab maxWidthElement', () => {
+    component.maxWidthElement = mockHTMLElement;
+    component.onResize();
+    expect(component.maxWidthTab).toEqual('450px');
+  });
+
+  test('getSizeTab maxWidthElement < maxWidthPx', () => {
+    component.maxWidthPx = 550;
+    component.maxWidthElement = mockHTMLElement;
+    component.onResize();
+    expect(component.maxWidthTab).toEqual('450px');
   });
 });

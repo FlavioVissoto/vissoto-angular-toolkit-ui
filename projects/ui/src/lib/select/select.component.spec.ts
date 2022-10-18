@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DebugElement } from '@angular/core';
 import { SelectComponent } from './select.component';
 import { SelectItem } from './interfaces/select.interface';
 import { Size } from '../interface/size.enum';
@@ -8,7 +7,6 @@ import { Size } from '../interface/size.enum';
 describe('SelectComponent', () => {
   let component: SelectComponent;
   let fixture: ComponentFixture<SelectComponent>;
-  let input: DebugElement;
 
   const mockSelectItem: SelectItem[] = [
     {

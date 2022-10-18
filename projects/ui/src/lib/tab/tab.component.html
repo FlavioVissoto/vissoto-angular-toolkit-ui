@@ -1,15 +1,18 @@
-<div *ngIf="itens && itens.length > 0" class="border-b border-gray-200 dark:border-gray-700">
-  <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-    <li class="mr-2" *ngFor="let item of itens" data-id="{{item.id}}">
-      <a (click)="click(item)" class="inline-flex p-4 group" [ngClass]="{'border-b-2 border-transparent cursor-pointer':!item.disabled,
-                          'text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500': item.disabled,
-                          'text-blue-600 border-blue-600 hover:border-blue-800 hover:text-blue-800': item.selected && !item.disabled,
-                          'hover:text-gray-600 hover:border-gray-300': !item.selected && !item.disabled}">
-        <img *ngIf="item.img" [src]="item.img.src" [alt]="item.img.alt" [width]="item.img.width"
-          [height]="item.img.height" class="mr-2 w-5 h-5 {{item.img.cssClass}}" [ngClass]="{'': item.selected && !item.disabled,
-                              'hover:text-gray-600 hover:border-gray-300': !item.selected && !item.disabled}">
-        {{item.text}}
-      </a>
-    </li>
-  </ul>
+<div *ngIf="itens && itens.length > 0" class="">
+  <nav [style.max-width]="maxWidthTab" [style.width]="widthTab">
+    <ul class="flex overflow-x-auto overflow-y-auto text-sm font-medium text-center text-gray-500">
+      <li *ngFor="let item of itens" [attr.data-id-tab]="item.id" 
+          class="py-2 px-6 border-b-2 border-gray-200" 
+          [ngClass]="{'cursor-pointer':!item.disabled,
+                      'text-gray-400 cursor-not-allowed': item.disabled,
+                      'text-blue-600 border-blue-600 hover:text-blue-600': item.selected,
+                      'hover:text-gray-600 hover:border-gray-400': !item.selected && !item.disabled}">
+        <a (click)="click(item)" class="flex justify-center items-center">
+          <img *ngIf="item.img" [src]="item.img.src" [alt]="item.img.alt" [width]="item.img.width"
+            [height]="item.img.height" class="mr-2 w-6 h-6 {{item.img.cssClass}}" [ngClass]="{'opacity-50 hover:text-gray-600 hover:border-gray-300': item.disabled}">
+          {{item.text}}
+        </a>
+      </li>
+    </ul>
+  </nav> 
 </div>
