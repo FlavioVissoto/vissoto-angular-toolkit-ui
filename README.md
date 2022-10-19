@@ -1,27 +1,21 @@
-# VissotoAngularToolkitUi
+# VISSOTO ANGULAR TOOLKIT
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+![GitHub package.json version](https://img.shields.io/github/package-json/v/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub all releases](https://img.shields.io/github/downloads/FlavioVissoto/vissoto-angular-toolkit-ui/total?color=blue)  ![GitHub Tags](https://img.shields.io/github/tag/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub Stars](https://img.shields.io/github/stars/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub Forks](https://img.shields.io/github/forks/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub Issues](https://img.shields.io/github/issues/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue)
 
-## Development server
+### Componentes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Componente Button;
+- Componente Card;
+- Componente Number Stepper;
+- Componente Select;
+- Componente Tab;
+- Componente Tooltip;
 
-## Code scaffolding
+#### Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Instalar o componente **@vissoto-angular/ui**
 
-## Build
+`$ npm i @vissoto-angular/ui`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Tutorial
+Todos os componentes estão descritos no site: http://vissoto.dev.br
