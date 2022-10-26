@@ -9,10 +9,13 @@ export * from './lib/button/interface/button-shadow.enum';
 export * from './lib/card/card-alfa/card-alfa.component';
 export * from './lib/card/card-alfa/card-alfa.module';
 export * from './lib/card/card-alfa/interface/card-alfa.interface';
-/** Card eta*/
+/** Card Beta*/
 export * from './lib/card/card-beta/card-beta.component';
 export * from './lib/card/card-beta/card-beta.module';
 export * from './lib/card/card-beta/interface/card-beta.interface';
+/** Checkbox */
+export * from './lib/checkbox/checkbox.component';
+export * from './lib/checkbox/checkbox.module';
 /** Interfaces */
 export * from './lib/interface/size.enum';
 /** Select */
