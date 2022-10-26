@@ -6,6 +6,7 @@
 
 - Componente Button;
 - Componente Card;
+- Componente Checkbox;
 - Componente Number Stepper;
 - Componente Select;
 - Componente Tab;
