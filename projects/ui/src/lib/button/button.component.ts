@@ -45,6 +45,8 @@ export class ButtonComponent {
   @Input() text: string;
   @Input() message: string;
   @Input() loading: boolean;
+  @Input() cssClassButton: boolean;
+  @Input() cssClassText: boolean;
 
   @Output() byClick = new EventEmitter();
   @Output() byHover = new EventEmitter();

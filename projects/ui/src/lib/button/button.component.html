@@ -4,6 +4,7 @@
   (mouseover)="btnHover()"
   (mouseleave)="btnLeave()"
   class="font-medium mr-2 mb-2 active:outline-none
+  {{ cssClassButton }}
   {{ cssClassCollor }} 
   {{ cssClassRounded }} 
   {{ cssClassGradientDuotone }} 
@@ -15,7 +16,7 @@
   {{ cssClassDisabled }}"
   [ngClass]="{ ' active:ring-1 ': !disabled }">
   <span
-    class="{{ roundedOutline() }} {{ cssClassSize }}"
+    class="{{cssClassText}} {{ roundedOutline() }} {{ cssClassSize }}"
     [ngClass]="{
       'relative transition-all ease-in duration-75 bg-white group-hover:bg-opacity-0': cssClassGradientOutline
     }">

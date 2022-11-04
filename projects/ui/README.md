@@ -1,24 +1,23 @@
-# Ui
+# VISSOTO ANGULAR TOOLKIT
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+![GitHub package.json version](https://img.shields.io/github/package-json/v/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub all releases](https://img.shields.io/github/downloads/FlavioVissoto/vissoto-angular-toolkit-ui/total?color=blue)  ![GitHub Tags](https://img.shields.io/github/tag/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub Stars](https://img.shields.io/github/stars/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub Forks](https://img.shields.io/github/forks/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue) ![GitHub Issues](https://img.shields.io/github/issues/FlavioVissoto/vissoto-angular-toolkit-ui?color=blue)
 
-## Code scaffolding
+### Componentes
 
-Run `ng generate component component-name --project ui` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ui`.
-> Note: Don't forget to add `--project ui` or else it will be added to the default project in your `angular.json` file. 
+- Componente Button;
+- Componente Card;
+- Componente Checkbox;
+- Componente Input Text;
+- Componente Number Stepper;
+- Componente Select;
+- Componente Tab;
+- Componente Tooltip;
 
-## Build
+#### Instalação
 
-Run `ng build ui` to build the project. The build artifacts will be stored in the `dist/` directory.
+Instalar o componente **@vissoto-angular/ui**
 
-## Publishing
+`$ npm i @vissoto-angular/ui`
 
-After building your library with `ng build ui`, go to the dist folder `cd dist/ui` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ui` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Tutorial
+Todos os componentes estão descritos no site: http://vissoto.dev.br
