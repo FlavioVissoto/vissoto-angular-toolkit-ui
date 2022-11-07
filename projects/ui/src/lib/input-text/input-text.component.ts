@@ -4,7 +4,7 @@ import { RandomCustom } from '../utils/random';
 import { Size } from '../interface/size.enum';
 
 @Component({
-  selector: 'lib-input-text',
+  selector: 'vat-input-text',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.css'],
 })
