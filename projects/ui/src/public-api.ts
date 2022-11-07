@@ -16,6 +16,9 @@ export * from './lib/card/card-beta/interface/card-beta.interface';
 /** Checkbox */
 export * from './lib/checkbox/checkbox.component';
 export * from './lib/checkbox/checkbox.module';
+/** InputText */
+export * from './lib/input-text/input-text.component';
+export * from './lib/input-text/input-text.module';
 /** Interfaces */
 export * from './lib/interface/size.enum';
 /** Select */
