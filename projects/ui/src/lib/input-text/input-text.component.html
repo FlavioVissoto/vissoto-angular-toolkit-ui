@@ -1,6 +1,9 @@
 <div>
     <label *ngIf="label" for="vat_input_text_{{ id }}" class="block text-sm font-medium text-gray-900">{{label}}</label>
-    <input [type]="type" id="vat_input_text_{{ id }}" 
+    <input [type]="type" id="vat_input_text_{{ id }}"
+    
+        [formControl]="control ? control : getNewFormControl()"
+    
         [attr.placeholder]="placeholder" 
         [attr.required]="required ? '' : null"
         [attr.readonly]="readonly ? '' : null"

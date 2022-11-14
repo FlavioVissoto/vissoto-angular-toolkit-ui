@@ -1,15 +1,19 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+import { FormControl } from '@angular/forms';
 import { RandomCustom } from '../utils/random';
 import { Size } from '../interface/size.enum';
 
 @Component({
   selector: 'vat-input-text',
   templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.css'],
+  styleUrls: ['./input-text.component.scss'],
 })
 export class InputTextComponent implements OnInit {
   @Output() id: number;
+
+  @Input() control: FormControl;
+  @Input() controlName: string;
 
   /**
    * Valor exibido acima do input (label).
@@ -244,5 +248,9 @@ export class InputTextComponent implements OnInit {
   @Input() set rounded(value: Size) {
     this._rounded = value;
     this.cssClassRounded = this.getCssRounded();
+  }
+
+  getNewFormControl(): FormControl {
+    return new FormControl();
   }
 }
