@@ -1,0 +1,31 @@
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 z-[9998]" [ngClass]="{'hidden': !show}"></div>
+<div class="fixed inset-0 z-[9999]" [ngClass]="{'hidden': !show}">
+    <div id="defaultModal"
+        class="flex min-h-full items-end justify-center p-2 text-center sm:items-center sm:p-0 transition-all ease-in duration-100"
+        [ngClass]="{'opacity-0': !show}">
+        <div class="relative p-2 w-full max-w-2xl h-full md:h-auto">
+            <div class="relative bg-white shadow {{cssClassRounded}}">
+                <div class="flex justify-between items-start p-2 border-b">
+                    <h3 class="text-xl font-semibold text-gray-900 {{cssClassHeader}}">{{title}}</h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:text-gray-900 text-sm p-1.5 ml-auto inline-flex items-center {{cssClassRounded}}"
+                        (click)="close()">
+                        <svg fill="none" stroke="currentColor" class="w-5 h-5" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <line x1="18" x2="6" y1="6" y2="18" />
+                            <line x1="6" x2="18" y1="6" y2="18" />
+                        </svg>
+                        <span class="sr-only">{{labelButtonClose}}</span>
+                    </button>
+                </div>
+                <div class="p-2">
+                    <ng-content select="[body]"></ng-content>
+                </div>
+                <div class="flex items-center p-2 space-x-2 border-t border-gray-200 {{cssClassRounded}}">
+                    <ng-content select="[footer]"></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

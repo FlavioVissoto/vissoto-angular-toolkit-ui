@@ -21,6 +21,9 @@ export * from './lib/input-text/input-text.component';
 export * from './lib/input-text/input-text.module';
 /** Interfaces */
 export * from './lib/interface/size.enum';
+/** Modal */
+export * from './lib/modal/modal.component';
+export * from './lib/modal/modal.module';
 /** Select */
 export * from './lib/select/interfaces/select.interface';
 export * from './lib/select/select.component';
