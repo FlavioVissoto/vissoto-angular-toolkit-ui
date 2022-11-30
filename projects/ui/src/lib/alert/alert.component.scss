@@ -1,0 +1,178 @@
+@import '../../assets/scss/colors.scss';
+
+:host {
+  .alert {
+    display: flex;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border-top-width: 4px;
+
+    &.hidden {
+      display: none;
+    }
+
+    .screen-reader-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    svg {
+      flex-shrink: 0;
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+
+    .content {
+      margin-left: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      font-weight: 500;
+    }
+
+    .button-close {
+      display: inline-flex;
+      height: 2rem;
+      width: 2rem;
+      margin: -0.375rem -0.375rem -0.375rem auto;
+      border-radius: 0.5rem;
+      padding: 0.375rem;
+
+      svg {
+        height: 1.25rem;
+        width: 1.25rem;
+      }
+    }
+
+    &.red {
+      background-color: color(red-1);
+      border-color: color(red-5);
+
+      svg {
+        color: color(red-5);
+      }
+
+      .content {
+        color: color(red-7);
+      }
+
+      .button-close {
+        color: color(red-5);
+
+        &:active {
+          background-color: color(red-2);
+        }
+
+        &:hover {
+          background-color: color(red-2);
+        }
+      }
+    }
+
+    &.gray {
+      background-color: color(gray-1);
+      border-color: color(gray-5);
+
+      svg {
+        color: color(gray-5);
+      }
+
+      .content {
+        color: color(gray-7);
+      }
+
+      .button-close {
+        color: color(gray-5);
+
+        &:active {
+          background-color: color(gray-2);
+        }
+
+        &:hover {
+          background-color: color(gray-2);
+        }
+      }
+    }
+
+    &.blue {
+      background-color: color(blue-1);
+      border-color: color(blue-5);
+
+      svg {
+        color: color(blue-5);
+      }
+
+      .content {
+        color: color(blue-7);
+      }
+
+      .button-close {
+        color: color(blue-5);
+
+        &:active {
+          background-color: color(blue-2);
+        }
+
+        &:hover {
+          background-color: color(blue-2);
+        }
+      }
+    }
+
+    &.green {
+      background-color: color(green-1);
+      border-color: color(green-5);
+
+      svg {
+        color: color(green-5);
+      }
+
+      .content {
+        color: color(green-7);
+      }
+
+      .button-close {
+        color: color(green-5);
+
+        &:active {
+          background-color: color(green-2);
+        }
+
+        &:hover {
+          background-color: color(green-2);
+        }
+      }
+    }
+
+    &.yellow {
+      background-color: color(yellow-1);
+      border-color: color(yellow-5);
+
+      svg {
+        color: color(yellow-5);
+      }
+
+      .content {
+        color: color(yellow-7);
+      }
+
+      .button-close {
+        color: color(yellow-5);
+
+        &:active {
+          background-color: color(yellow-2);
+        }
+
+        &:hover {
+          background-color: color(yellow-2);
+        }
+      }
+    }
+  }
+}

@@ -4,10 +4,11 @@
 
 ### Componentes
 
+- Componente Alert;
 - Componente Button;
 - Componente Card;
 - Componente Checkbox;
-- Componente Icons;
+- Componente Icons (em construção);
 - Componente Input Text;
 - Componente Modal;
 - Componente Number Stepper;

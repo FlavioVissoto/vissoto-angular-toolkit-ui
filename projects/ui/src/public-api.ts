@@ -1,3 +1,6 @@
+/** Alert */
+export * from './lib/alert/alert.component';
+export * from './lib/alert/alert.module';
 /** Button */
 export * from './lib/button/button.component';
 export * from './lib/button/button.module';

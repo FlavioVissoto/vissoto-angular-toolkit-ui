@@ -1,0 +1,27 @@
+@function color($key, $opacity: 1) {
+  $color: if(map-has-key($colors, $key), map-get($colors, $key), $key);
+  @return rgba($color, $opacity);
+}
+
+$colors: (
+  red-1: #fee2e2,
+  red-2: #fecaca,
+  red-5: #ef4444,
+  red-7: #b91c1c,
+  gray-1: #f3f4f6,
+  gray-2: #e5e7eb,
+  gray-5: #6b7280,
+  gray-7: #374151,
+  blue-1: #dbeafe,
+  blue-2: #bfdbfe,
+  blue-5: #3b82f6,
+  blue-7: #1d4ed8,
+  green-1: #dcfce7,
+  green-2: #bbf7d0,
+  green-5: #22c55e,
+  green-7: #15803d,
+  yellow-1: #fef9c3,
+  yellow-2: #fef08a,
+  yellow-5: #eab308,
+  yellow-7: #a16207,
+);
