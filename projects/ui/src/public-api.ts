@@ -8,6 +8,13 @@ export * from './lib/button/interface/button-collor.enum';
 export * from './lib/button/interface/button-gradient-duotone.enum';
 export * from './lib/button/interface/button-gradient-monochrome.enum';
 export * from './lib/button/interface/button-shadow.enum';
+/** Calendar */
+export * from './lib/calendar/calendar.component';
+export * from './lib/calendar/calendar.module';
+export * from './lib/calendar/interfaces/day.calendar.interface';
+export * from './lib/calendar/interfaces/month.calendar.interface';
+export * from './lib/calendar/interfaces/notification.calendar.interface';
+export * from './lib/calendar/interfaces/week.calendar.interface';
 /** Card Alfa*/
 export * from './lib/card/card-alfa/card-alfa.component';
 export * from './lib/card/card-alfa/card-alfa.module';

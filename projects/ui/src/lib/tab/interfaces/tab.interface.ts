@@ -24,5 +24,6 @@ export interface TabItem {
   /**
    * Armazena informações que serão retornadas quando o usuário clicar o item.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   options?: any;
 }
