@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { FormControl } from '@angular/forms';
 import { RandomCustom } from '../utils/random';
-import { Size } from '../interface/size.enum';
 
 @Component({
   selector: 'vat-input-text',
@@ -10,7 +9,7 @@ import { Size } from '../interface/size.enum';
   styleUrls: ['./input-text.component.scss'],
 })
 export class InputTextComponent implements OnInit {
-  @Output() id: number;
+  @Output() id: string;
 
   @Input() control: FormControl;
   @Input() controlName: string;
@@ -87,7 +86,7 @@ export class InputTextComponent implements OnInit {
   @Input() name: number;
 
   ngOnInit(): void {
-    this.id = RandomCustom.getRandomInt(0, 999999);
+    this.id = RandomCustom.getRandomInt(0, 999999).toString();
   }
 
   /**
@@ -223,34 +222,21 @@ export class InputTextComponent implements OnInit {
   }
 
   /**
-   * Classe CSS utilizada no Input.
+   * Define o tamanho da fonte do elemento.
    */
-  @Input() cssClassInput: string;
+  @Input() fontSize: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' = 'sm';
 
-  cssClassRounded: string;
-  private _rounded: Size;
-  private getCssRounded(): string {
-    switch (this._rounded) {
-      case Size.ExtraSmall:
-        return 'rounded-sm';
-      case Size.Small:
-        return 'rounded';
-      case Size.Base:
-        return 'rounded-md';
-      case Size.Large:
-        return 'rounded-lg';
-      case Size.ExtraLarge:
-        return 'rounded-full';
-      default:
-        return '';
-    }
-  }
-  @Input() set rounded(value: Size) {
-    this._rounded = value;
-    this.cssClassRounded = this.getCssRounded();
-  }
-
-  getNewFormControl(): FormControl {
-    return new FormControl();
-  }
+  /**
+   * Define o raio dos cantos do elemento.
+   */
+  @Input() rounded:
+    | 'sm'
+    | 'rounded'
+    | 'md'
+    | 'lg'
+    | 'xl'
+    | '2xl'
+    | '3xl'
+    | 'full'
+    | 'none' = 'none';
 }
