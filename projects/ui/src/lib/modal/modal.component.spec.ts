@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalComponent } from './modal.component';
-import { Size } from '../interface/size.enum';
+import { Size } from '../interface/size.interface';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;

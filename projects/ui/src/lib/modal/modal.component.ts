@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Size } from '../interface/size.enum';
+import { Size } from '../interface/size.interface';
 
 @Component({
-  selector: 'lib-modal',
+  selector: 'vat-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
 })
@@ -37,15 +37,15 @@ export class ModalComponent {
   }
   private getCssRounded(): string {
     switch (this._rounded) {
-      case Size.ExtraSmall:
+      case Size['extra-small']:
         return 'rounded-sm';
-      case Size.Small:
+      case Size.small:
         return 'rounded';
-      case Size.Base:
+      case Size.base:
         return 'rounded-md';
-      case Size.Large:
+      case Size.large:
         return 'rounded-lg';
-      case Size.ExtraLarge:
+      case Size['extra-large']:
         return 'rounded-full';
       default:
         return '';

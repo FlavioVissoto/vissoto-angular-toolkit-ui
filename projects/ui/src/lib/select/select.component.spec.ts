@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectComponent } from './select.component';
 import { SelectItem } from './interfaces/select.interface';
-import { Size } from '../interface/size.enum';
+import { Size } from '../interface/size.interface';
 
 describe('SelectComponent', () => {
   let component: SelectComponent;

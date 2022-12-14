@@ -30,7 +30,13 @@
     }
   }
 
+  &-semibold{
+    font-weight: 600;
+  }
   &-medium {
     font-weight: 500;
+  }
+  &-normal{
+    font-weight: 400;
   }
 }

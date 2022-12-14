@@ -51,126 +51,126 @@
     }
 
     &.red {
-      background-color: color(red-01);
-      border-color: color(red-05);
+      background-color: color(red-400);
+      border-color: color(red-400);
 
       svg {
-        color: color(red-05);
+        color: color(red-400);
       }
 
       .content {
-        color: color(red-07);
+        color: color(red-400);
       }
 
       .button-close {
-        color: color(red-05);
+        color: color(red-400);
 
         &:active {
-          background-color: color(red-02);
+          background-color: color(red-100);
         }
 
         &:hover {
-          background-color: color(red-02);
+          background-color: color(red-100);
         }
       }
     }
 
     &.gray {
-      background-color: color(gray-01);
-      border-color: color(gray-05);
+      background-color: color(gray-400);
+      border-color: color(gray-400);
 
       svg {
-        color: color(gray-05);
+        color: color(gray-400);
       }
 
       .content {
-        color: color(gray-07);
+        color: color(gray-600);
       }
 
       .button-close {
-        color: color(gray-05);
+        color: color(gray-400);
 
         &:active {
-          background-color: color(gray-02);
+          background-color: color(gray-100);
         }
 
         &:hover {
-          background-color: color(gray-02);
+          background-color: color(gray-100);
         }
       }
     }
 
     &.blue {
-      background-color: color(blue-01);
-      border-color: color(blue-05);
+      background-color: color(blue-400);
+      border-color: color(blue-400);
 
       svg {
-        color: color(blue-05);
+        color: color(blue-400);
       }
 
       .content {
-        color: color(blue-07);
+        color: color(blue-600);
       }
 
       .button-close {
-        color: color(blue-05);
+        color: color(blue-400);
 
         &:active {
-          background-color: color(blue-02);
+          background-color: color(blue-100);
         }
 
         &:hover {
-          background-color: color(blue-02);
+          background-color: color(blue-100);
         }
       }
     }
 
     &.green {
-      background-color: color(green-01);
-      border-color: color(green-05);
+      background-color: color(green-400);
+      border-color: color(green-400);
 
       svg {
-        color: color(green-05);
+        color: color(green-400);
       }
 
       .content {
-        color: color(green-07);
+        color: color(green-600);
       }
 
       .button-close {
-        color: color(green-05);
+        color: color(green-400);
 
         &:active {
-          background-color: color(green-02);
+          background-color: color(green-100);
         }
 
         &:hover {
-          background-color: color(green-02);
+          background-color: color(green-100);
         }
       }
     }
 
     &.yellow {
-      background-color: color(yellow-01);
-      border-color: color(yellow-05);
+      background-color: color(yellow-400);
+      border-color: color(yellow-400);
 
       svg {
-        color: color(yellow-05);
+        color: color(yellow-400);
       }
 
       .content {
-        color: color(yellow-07);
+        color: color(yellow-600);
       }
 
       .button-close {
-        color: color(yellow-05);
+        color: color(yellow-400);
 
         &:active {
-          background-color: color(yellow-02);
+          background-color: color(yellow-100);
         }
 
         &:hover {
-          background-color: color(yellow-02);
+          background-color: color(yellow-100);
         }
       }
     }

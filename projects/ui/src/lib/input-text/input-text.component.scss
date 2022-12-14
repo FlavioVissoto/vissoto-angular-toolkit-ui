@@ -10,11 +10,11 @@
       display: block;
       @extend .vat-font-size-sm;
       @extend .vat-font-medium;
-      color: color(gray-10);
+      color: color(gray-900);
     }
     &-input-text {
-      border: 1px solid color(gray-04);
-      color: color(gray-10);
+      border: 1px solid color(gray-300);
+      color: color(gray-900);
       width: 100%;
       padding: 0.625rem;
     }

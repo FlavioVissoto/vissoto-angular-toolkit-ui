@@ -1,0 +1,17 @@
+export enum Color {
+  blue = 'blue',
+  alternative = 'alternative',
+  green = 'green',
+  red = 'red',
+  yellow = 'yellow',
+  purple = 'purple',
+  orange = 'orange',
+  pink = 'pink',
+  purpleToBlue = 'purple-to-blue',
+  cyanToBlue = 'cyan-to-blue',
+  greenToBlue = 'green-to-blue',
+  purpleToPink = 'purple-to-pink',
+  pinkToOrange = 'pink-to-orange',
+  tealToLime = 'teal-to-lime',
+  redToYellow = 'red-to-yellow',
+}

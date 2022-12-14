@@ -4,10 +4,6 @@ export * from './lib/alert/alert.module';
 /** Button */
 export * from './lib/button/button.component';
 export * from './lib/button/button.module';
-export * from './lib/button/interface/button-collor.enum';
-export * from './lib/button/interface/button-gradient-duotone.enum';
-export * from './lib/button/interface/button-gradient-monochrome.enum';
-export * from './lib/button/interface/button-shadow.enum';
 /** Calendar */
 export * from './lib/calendar/calendar.component';
 export * from './lib/calendar/calendar.module';
@@ -30,7 +26,10 @@ export * from './lib/checkbox/checkbox.module';
 export * from './lib/input-text/input-text.component';
 export * from './lib/input-text/input-text.module';
 /** Interfaces */
-export * from './lib/interface/size.enum';
+export * from './lib/interface/color.interface';
+export * from './lib/interface/rounded.interface';
+/** Interfaces */
+export * from './lib/interface/size.interface';
 /** Modal */
 export * from './lib/modal/modal.component';
 export * from './lib/modal/modal.module';

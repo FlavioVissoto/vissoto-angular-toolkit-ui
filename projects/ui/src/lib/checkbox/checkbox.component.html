@@ -1,17 +1,13 @@
-<div class="flex">
-        <div class="flex items-center h-5">
-                <input *ngIf="control" id="vat-chb-{{id}}" type="checkbox"
-                        class="w-4 h-4 bg-gray-100 rounded border-gray-300" [ngClass]="{'cursor-pointer': !disabled}"
-                        [formControl]="control">
-                <input *ngIf="!control" id="vat-chb-{{id}}" type="checkbox"
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300" [checked]="checked"
-                        [disabled]="disabled" [ngClass]="{'cursor-pointer': !disabled}"
-                        (change)="changeCheckbox($event)">
+<div class="vat-checkbox">
+        <div class="vat-checkbox-container">
+                <input *ngIf="control" id="vat-checkbox-{{id}}" type="checkbox"
+                        class="vat-checkbox-container item vat-border-radius-rounded" [formControl]="control">
+                <input *ngIf="!control" id="vat-checkbox-{{id}}" type="checkbox"
+                        class="vat-checkbox-container item vat-border-radius-rounded" [checked]="checked"
+                        [disabled]="disabled" (change)="changeCheckbox($event)">
         </div>
-        <div class="ml-2 text-sm">
-                <label for="vat-chb-{{id}}" class="text-sm font-medium text-gray-900"
-                        [ngClass]="{'cursor-pointer': !disabled}">{{text}}</label>
-                <p *ngIf="helperText" id="vat-chb-helper-{{id}}"
-                        class="text-xs font-normal text-gray-500 dark:text-gray-300">{{helperText}}</p>
+        <div class="label">
+                <label for="vat-checkbox-{{id}}">{{text}}</label>
+                <p *ngIf="helperText" id="vat-checkbox-helper-{{id}}" class="helper">{{helperText}}</p>
         </div>
 </div>
