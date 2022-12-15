@@ -1,16 +1,11 @@
-import {
-  Component,
-  EventEmitter,
-  HostListener,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 import { TabItem } from './interfaces/tab.interface';
 
 @Component({
   selector: 'vat-tab',
   templateUrl: './tab.component.html',
+  styleUrls: ['./tab.component.scss'],
 })
 export class TabComponent {
   /**
@@ -63,10 +58,7 @@ export class TabComponent {
       return;
     }
     if (this.maxWidthPx) {
-      if (
-        this.maxWidthElement &&
-        this.maxWidthElement.offsetWidth < this.maxWidthPx
-      ) {
+      if (this.maxWidthElement && this.maxWidthElement.offsetWidth < this.maxWidthPx) {
         this.maxWidthTab = this.maxWidthElement.offsetWidth + 'px';
       } else {
         this.maxWidthTab = this.maxWidthPx + 'px';
