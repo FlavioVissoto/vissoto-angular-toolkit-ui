@@ -1,18 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { Color } from '../interface/color.interface';
+
 @Component({
   selector: 'vat-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent {
-  /**
-   * Label utilizada no botão "x" do modal (Botão para fechar o modal)
-   *
-   * Exibido apenas em acessibilidade.
-   */
-  @Input() labelButtonClose = 'Fechar Alerta';
-
   /**
    * Dispara quando houver um clique do mouse no botão para fechar o elemento.
    *
@@ -25,12 +20,7 @@ export class AlertComponent {
    *
    * Cores disponíveis: red | gray | blue | green | yellow
    */
-  @Input() color: string;
-
-  /**
-   * Classe CSS customizada para o alerta.
-   */
-  @Input() customCss: string;
+  @Input() color: Color = Color.blue;
 
   /**
    * Tempo de exibição do alerta em milisegundos.

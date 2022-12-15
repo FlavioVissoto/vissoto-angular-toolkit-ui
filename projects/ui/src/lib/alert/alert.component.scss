@@ -1,176 +1,275 @@
-@import '../../assets/scss/colors.scss';
+@import './../../assets/scss/colors.scss';
+@import './../../assets/scss/media-query.scss';
+@import './../../assets/scss/border.scss';
+@import './../../assets/scss/font.scss';
 
 :host {
-  .alert {
-    display: flex;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border-top-width: 4px;
+  .vat {
+    &-alert {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      border-top-width: 0.25rem;
 
-    &.hidden {
-      display: none;
-    }
-
-    .screen-reader-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-
-    svg {
-      flex-shrink: 0;
-      height: 1.25rem;
-      width: 1.25rem;
-    }
-
-    .content {
-      margin-left: 0.75rem;
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-      font-weight: 500;
-    }
-
-    .button-close {
-      display: inline-flex;
-      height: 2rem;
-      width: 2rem;
-      margin: -0.375rem -0.375rem -0.375rem auto;
-      border-radius: 0.5rem;
-      padding: 0.375rem;
-
-      svg {
-        height: 1.25rem;
-        width: 1.25rem;
-      }
-    }
-
-    &.red {
-      background-color: color(red-400);
-      border-color: color(red-400);
-
-      svg {
-        color: color(red-400);
+      &.hidden {
+        display: none;
       }
 
       .content {
-        color: color(red-400);
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
       }
 
       .button-close {
-        color: color(red-400);
+        border-radius: 0.5rem;
+        padding: 0.25rem;
+        margin-bottom: 0.1rem;
 
-        &:active {
-          background-color: color(red-100);
-        }
-
-        &:hover {
-          background-color: color(red-100);
-        }
-      }
-    }
-
-    &.gray {
-      background-color: color(gray-400);
-      border-color: color(gray-400);
-
-      svg {
-        color: color(gray-400);
-      }
-
-      .content {
-        color: color(gray-600);
-      }
-
-      .button-close {
-        color: color(gray-400);
-
-        &:active {
-          background-color: color(gray-100);
-        }
-
-        &:hover {
-          background-color: color(gray-100);
+        svg {
+          height: 1.25rem;
+          width: 1.25rem;
         }
       }
-    }
 
-    &.blue {
-      background-color: color(blue-400);
-      border-color: color(blue-400);
+      &.pink {
+        background-color: color(pink-500);
+        border-color: color(pink-600);
+        color: color(white);
 
-      svg {
-        color: color(blue-400);
-      }
+        .button-close {
+          &:hover {
+            background-color: color(pink-600);
+          }
 
-      .content {
-        color: color(blue-600);
-      }
-
-      .button-close {
-        color: color(blue-400);
-
-        &:active {
-          background-color: color(blue-100);
-        }
-
-        &:hover {
-          background-color: color(blue-100);
+          &:active {
+            background-color: color(pink-700);
+          }
         }
       }
-    }
 
-    &.green {
-      background-color: color(green-400);
-      border-color: color(green-400);
+      &.red {
+        background-color: color(red-500);
+        border-color: color(red-600);
+        color: color(white);
 
-      svg {
-        color: color(green-400);
-      }
+        .button-close {
+          &:hover {
+            background-color: color(red-600);
+          }
 
-      .content {
-        color: color(green-600);
-      }
-
-      .button-close {
-        color: color(green-400);
-
-        &:active {
-          background-color: color(green-100);
-        }
-
-        &:hover {
-          background-color: color(green-100);
+          &:active {
+            background-color: color(red-700);
+          }
         }
       }
-    }
 
-    &.yellow {
-      background-color: color(yellow-400);
-      border-color: color(yellow-400);
+      &.purple {
+        background-color: color(purple-500);
+        border-color: color(purple-600);
+        color: color(white);
 
-      svg {
-        color: color(yellow-400);
-      }
+        .button-close {
+          &:hover {
+            background-color: color(purple-600);
+          }
 
-      .content {
-        color: color(yellow-600);
-      }
-
-      .button-close {
-        color: color(yellow-400);
-
-        &:active {
-          background-color: color(yellow-100);
+          &:active {
+            background-color: color(purple-700);
+          }
         }
+      }
 
-        &:hover {
-          background-color: color(yellow-100);
+      &.yellow {
+        background-color: color(yellow-400);
+        border-color: color(yellow-500);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(yellow-500);
+          }
+
+          &:active {
+            background-color: color(yellow-600);
+          }
+        }
+      }
+
+      &.green {
+        background-color: color(green-500);
+        border-color: color(green-600);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(green-600);
+          }
+
+          &:active {
+            background-color: color(green-700);
+          }
+        }
+      }
+
+      &.orange {
+        background-color: color(orange-500);
+        border-color: color(orange-600);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(orange-600);
+          }
+
+          &:active {
+            background-color: color(orange-700);
+          }
+        }
+      }
+
+      &.blue {
+        background-color: color(blue-500);
+        border-color: color(blue-600);
+        color: color(white);
+
+        .button-close {
+          &:hover {
+            background-color: color(blue-600);
+          }
+
+          &:active {
+            background-color: color(blue-700);
+          }
+        }
+      }
+
+      &.alternative {
+        background-color: color(white);
+        border-color: color(gray-200);
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-color: color(gray-200);
+          }
+
+          &:active {
+            background-color: color(gray-300);
+          }
+        }
+      }
+
+      &.cyan-to-blue {
+        background-image: linear-gradient(to bottom right, color(cyan-500), color(blue-500));
+        border-image: linear-gradient(to bottom right, color(cyan-500), color(blue-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(cyan-500), color(blue-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(cyan-500), color(blue-500));
+          }
+        }
+      }
+
+      &.green-to-blue {
+        background-image: linear-gradient(to bottom right, color(green-500), color(blue-500));
+        border-image: linear-gradient(to bottom right, color(green-500), color(blue-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(green-500), color(blue-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(green-500), color(blue-500));
+          }
+        }
+      }
+
+      &.purple-to-pink {
+        background-image: linear-gradient(to bottom right, color(purple-500), color(pink-500));
+        border-image: linear-gradient(to bottom right, color(purple-500), color(pink-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(purple-500), color(pink-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(purple-500), color(pink-500));
+          }
+        }
+      }
+
+      &.red-to-yellow {
+        background-image: linear-gradient(to bottom right, color(red-500), color(yellow-500));
+        border-image: linear-gradient(to bottom right, color(red-500), color(yellow-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(red-500), color(yellow-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(red-500), color(yellow-500));
+          }
+        }
+      }
+
+      &.pink-to-orange {
+        background-image: linear-gradient(to bottom right, color(pink-500), color(orange-500));
+        border-image: linear-gradient(to bottom right, color(pink-500), color(orange-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(pink-500), color(orange-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(pink-500), color(orange-500));
+          }
+        }
+      }
+
+      &.purple-to-blue {
+        background-image: linear-gradient(to bottom right, color(purple-500), color(blue-500));
+        border-image: linear-gradient(to bottom right, color(purple-500), color(blue-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(purple-500), color(blue-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(purple-500), color(blue-500));
+          }
+        }
+      }
+
+      &.teal-to-lime {
+        background-image: linear-gradient(to bottom right, color(teal-500), color(lime-500));
+        border-image: linear-gradient(to bottom right, color(teal-500), color(lime-500));
+        color: color(gray-900);
+
+        .button-close {
+          &:hover {
+            background-image: linear-gradient(to left, color(teal-500), color(lime-500));
+          }
+
+          &:active {
+            background-image: linear-gradient(to left top, color(teal-500), color(lime-500));
+          }
         }
       }
     }
