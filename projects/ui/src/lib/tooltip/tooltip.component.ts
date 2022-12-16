@@ -10,9 +10,5 @@ import { Position } from './interface/position.enum';
 export class TooltipComponent {
   @Input() text = '';
   @Input() position: Position = Position.top;
-  showTooltip = false;
-
-  // overTooltip(): void {
-  //   this.showTooltip = !this.showTooltip;
-  // }
+  @Input() show = false;
 }
