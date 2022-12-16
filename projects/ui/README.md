@@ -6,9 +6,10 @@
 
 - Componente Alert;
 - Componente Button;
+- Componente Calender;
 - Componente Card;
 - Componente Checkbox;
-- Componente Icons (em construção);
+- Componente Icons;
 - Componente Input Text;
 - Componente Modal;
 - Componente Number Stepper;

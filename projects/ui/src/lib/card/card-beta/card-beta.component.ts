@@ -5,11 +5,7 @@ import { CardBeta } from './interface/card-beta.interface';
 @Component({
   selector: 'vat-card-beta',
   templateUrl: './card-beta.component.html',
-  styleUrls: [
-    './../../../assets/css/tailwind.css',
-    './../../../assets/css/tailwind-custom.scss',
-    './card-beta.component.scss',
-  ],
+  styleUrls: ['./card-beta.component.scss'],
 })
 export class CardBetaComponent implements OnInit {
   @Input() card: CardBeta;

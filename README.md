@@ -4,9 +4,14 @@
 
 ### Componentes
 
+- Componente Alert;
 - Componente Button;
+- Componente Calender;
 - Componente Card;
 - Componente Checkbox;
+- Componente Icons;
+- Componente Input Text;
+- Componente Modal;
 - Componente Number Stepper;
 - Componente Select;
 - Componente Tab;

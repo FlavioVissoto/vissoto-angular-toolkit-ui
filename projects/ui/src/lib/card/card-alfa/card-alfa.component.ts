@@ -5,11 +5,7 @@ import { CardAlfa } from './interface/card-alfa.interface';
 @Component({
   selector: 'vat-card-alfa',
   templateUrl: './card-alfa.component.html',
-  styleUrls: [
-    './../../../assets/css/tailwind.css',
-    './../../../assets/css/tailwind-custom.scss',
-    './card-alfa.component.scss',
-  ],
+  styleUrls: ['./card-alfa.component.scss'],
 })
 export class CardAlfaComponent {
   @Input() card: CardAlfa;

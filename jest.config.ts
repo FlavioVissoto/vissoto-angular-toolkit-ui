@@ -8,21 +8,8 @@ const config: Config.InitialOptions = {
   collectCoverage: true,
   coverageDirectory: './coverage',
   setupFilesAfterEnv: ['<rootDir>/setup-jest.ts'],
-  coveragePathIgnorePatterns: [
-    'node_modules',
-    'test-config',
-    'interfaces',
-    '.module.ts',
-    '.router.ts',
-    '.html',
-    'enum',
-  ],
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules',
-    '<rootDir>/dist/',
-    '<rootDir>/src/test.ts',
-    '<rootDir>/setup-jest.ts',
-  ],
+  coveragePathIgnorePatterns: ['node_modules', 'test-config', 'interfaces', '.module.ts', '.router.ts', '.html', 'enum'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist/', '<rootDir>/src/test.ts', '<rootDir>/setup-jest.ts'],
   transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
   coverageThreshold: {
     global: {
