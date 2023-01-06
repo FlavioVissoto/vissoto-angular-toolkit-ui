@@ -14,8 +14,8 @@
     "modules": {
       "type": "boolean",
       "default": true,
-      "description": "Whether to import all MDB modules.",
-      "x-prompt": "Import all MDB modules?"
+      "description": "Whether to import all VAT modules.",
+      "x-prompt": "Import all VAT modules?"
     },
     "robotoFont": {
       "type": "boolean",
