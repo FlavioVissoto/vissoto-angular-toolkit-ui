@@ -13,6 +13,7 @@
     "url": "https://github.com/FlavioVissoto/vissoto-angular-toolkit-ui/issues"
   },
   "homepage": "https://github.com/FlavioVissoto/vissoto-angular-toolkit-ui#readme",
+  "schematics": "./src/schematics/collection.json",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
     "@angular/core": "^12.2.0"

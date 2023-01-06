@@ -23,7 +23,11 @@
     "test": "npx jest --no-cache --maxWorkers=1",
     "lint": "eslint . --ext .ts",
     "pack": "cd dist && npm pack",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "build:lib": "ng-packagr -p projects/ui/ng-package.json && npm run schematics:build",
+    "schematics:build": "tsc -p projects\\ui\\tsconfig.schematics.json && npm run schematics:copy-schema && npm run schematics:copy-collection",
+    "schematics:copy-schema": "copy projects\\ui\\src\\schematics\\ng-add\\schema.json dist\\src\\lib\\schematics\\ng-add",
+    "schematics:copy-collection": "copy projects\\ui\\src\\schematics\\collection.json dist\\src\\lib\\schematics\\"
   },
   "private": true,
   "husky": {
@@ -34,6 +38,7 @@
   },
   "dependencies": {
     "@angular/animations": "~12.2.0",
+    "@angular/cdk": "^15.0.3",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
