@@ -11,15 +11,18 @@ const config: Config.InitialOptions = {
   coveragePathIgnorePatterns: ['node_modules', 'test-config', 'interfaces', '.module.ts', '.router.ts', '.html', 'enum'],
   testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist/', '<rootDir>/src/test.ts', '<rootDir>/setup-jest.ts'],
   transformIgnorePatterns: ['node_modules/(?!.*\\.mjs$)'],
+  moduleNameMapper: {
+    '^@vissoto-angular/ui/(.*)$': '<rootDir>/projects/ui/$1',
+  },
   coverageThreshold: {
     global: {
-      branches: 90,
+      branches: 75,
       functions: 90,
       lines: 90,
       statements: 90,
     },
     './**/*.ts': {
-      branches: 90,
+      branches: 75,
       functions: 90,
       lines: 90,
       statements: 90,

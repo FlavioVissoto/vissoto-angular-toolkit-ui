@@ -20,13 +20,18 @@
     "module": "es2020",
     "lib": ["es2020", "dom"],
     "strictPropertyInitialization": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "paths": {
+      "@vissoto-angular/ui/*": ["projects/ui/*", "projects/ui"],
+      "@vissoto-angular/ui": ["dist/lib/*", "dist/lib/"]
+    }
   },
   "angularCompilerOptions": {
+    "strict": true,
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "enableIvy": true,
+    "enableIvy": true
   }
 }
