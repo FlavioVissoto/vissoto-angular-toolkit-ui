@@ -237,9 +237,7 @@ export class CalendarComponent implements OnInit {
    */
   selectDate(item: Day): void {
     this.removeAllSelectedDay();
-    const index = this.renderDates.findIndex(
-      (x) => x.day == item.day && x.month == item.month
-    );
+    const index = this.renderDates.findIndex((x) => x.day == item.day && x.month == item.month);
     this.selectedDay = item.day;
     this.renderDates[index].selected = true;
     this.disabledPlusButton = false;
@@ -297,51 +295,33 @@ export class CalendarComponent implements OnInit {
    * Atribui o dia da semana na variavel "currentDayWeek".
    */
   private setDayWeek(): void {
-    this.currentDayWeek = new Date(
-      this.currentYear,
-      this.currentMonth,
-      this.selectedDay
-    ).getDay();
+    this.currentDayWeek = new Date(this.currentYear, this.currentMonth, this.selectedDay).getDay();
   }
 
   /**
    * Renderiza o calendário.
    */
   private renderCalendar(): void {
-    const firstDayofMonth = this.getFirstDayofMonth(
-      this.currentYear,
-      this.currentMonth
-    );
-    const lastDateOfMonth = this.getLastDateOfMonth(
-      this.currentYear,
-      this.currentMonth
-    );
-    const lastDayOfMonth = this.getLastDayWeekOfMonth(
-      this.currentYear,
-      this.currentMonth
-    );
-    const lastDateOfPreviousMonth = this.getLastDateOfMonth(
-      this.currentYear,
-      this.currentMonth - 1
-    );
+    const firstDayofMonth = this.getFirstDayofMonth(this.currentYear, this.currentMonth);
+    const lastDateOfMonth = this.getLastDateOfMonth(this.currentYear, this.currentMonth);
+    const lastDayOfMonth = this.getLastDayWeekOfMonth(this.currentYear, this.currentMonth);
+    const lastDateOfPreviousMonth = this.getLastDateOfMonth(this.currentYear, this.currentMonth - 1);
 
     this.renderDates = [];
 
     for (let i = firstDayofMonth; i > 0; i--) {
       this.renderDates.push({
         text: (lastDateOfPreviousMonth - i + 1).toString(),
-        month: this.currentMonth > 0 ? this.currentMonth - 1 : 11,
+        month: this.currentMonth - 1,
         prev: true,
-        year: this.currentMonth > 0 ? this.currentYear : this.currentYear - 1,
+        year: this.currentYear - 1,
         day: lastDateOfPreviousMonth - i + 1,
       });
     }
 
     for (let i = 1; i <= lastDateOfMonth; i++) {
       const isToday =
-        i === this.date.getDate() &&
-        this.currentMonth === new Date().getMonth() &&
-        this.currentYear === new Date().getFullYear();
+        i === this.date.getDate() && this.currentMonth === new Date().getMonth() && this.currentYear === new Date().getFullYear();
       this.renderDates.push({
         text: i.toString(),
         isToday: isToday,
@@ -385,10 +365,7 @@ export class CalendarComponent implements OnInit {
    */
   private getHours(): string {
     const dateNow = new Date();
-    return `${dateNow.getHours()}:${dateNow
-      .getMinutes()
-      .toString()
-      .padStart(2, '0')}`;
+    return `${dateNow.getHours()}:${dateNow.getMinutes().toString().padStart(2, '0')}`;
   }
 
   /**
@@ -471,12 +448,7 @@ export class CalendarComponent implements OnInit {
     }
 
     this.notifications.forEach((element: NotificationCalendar) => {
-      const index = this.renderDates.findIndex(
-        (x) =>
-          x.day == element.day &&
-          x.month == element.month &&
-          x.year == element.year
-      );
+      const index = this.renderDates.findIndex((x) => x.day == element.day && x.month == element.month && x.year == element.year);
       if (index > 0) {
         this.renderDates[index].countNotifications = element.countNotifications;
         this.renderDates[index].notification = true;

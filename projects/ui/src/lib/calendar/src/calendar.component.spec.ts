@@ -111,15 +111,13 @@ describe('CalendarComponent', () => {
   test('selectDate', () => {
     component.renderDates = [mockDay];
     component.selectDate(mockDay);
-    const index = component.renderDates.findIndex(
-      (x) => x.day == mockDay.day && x.month == mockDay.month
-    );
+    const index = component.renderDates.findIndex((x) => x.day == mockDay.day && x.month == mockDay.month);
 
     expect(component.selectedDay).toEqual(new Date().getDate());
     expect(component.renderDates[index].selected).toBeTruthy();
     expect(component.disabledPlusButton).toBeFalsy();
 
-    expect(component.currentYear).toEqual(2022);
+    expect(component.currentYear).toEqual(new Date().getFullYear());
     component.byClickDate.subscribe({
       next: (x: Day) => {
         expect(x.day).toEqual(mockDay.day);
@@ -143,10 +141,10 @@ describe('CalendarComponent', () => {
 
   test('selectedYear', () => {
     const emitSpy = jest.spyOn(component.byChangeYear, 'emit');
-    component.selectedYear(2022);
+    component.selectedYear(new Date().getFullYear());
 
-    expect(component.currentYear).toEqual(2022);
-    expect(emitSpy).toHaveBeenCalledWith(2022);
+    expect(component.currentYear).toEqual(new Date().getFullYear());
+    expect(emitSpy).toHaveBeenCalledWith(new Date().getFullYear());
   });
 
   test('clickPlusButton', () => {
@@ -169,20 +167,14 @@ describe('CalendarComponent', () => {
   test('private setHours', () => {
     component['setHours']();
     const dateNow = new Date();
-    const hours = `${dateNow.getHours()}:${dateNow
-      .getMinutes()
-      .toString()
-      .padStart(2, '0')}`;
+    const hours = `${dateNow.getHours()}:${dateNow.getMinutes().toString().padStart(2, '0')}`;
     jest.advanceTimersByTime(1000);
     expect(component.currentHours).toEqual(hours);
   });
 
   test('private getHours', () => {
     const dateNow = new Date();
-    const hours = `${dateNow.getHours()}:${dateNow
-      .getMinutes()
-      .toString()
-      .padStart(2, '0')}`;
+    const hours = `${dateNow.getHours()}:${dateNow.getMinutes().toString().padStart(2, '0')}`;
     expect(component['getHours']()).toEqual(hours);
   });
 
@@ -197,15 +189,10 @@ describe('CalendarComponent', () => {
     component['addNotificationInCalendar']();
 
     const index = component.renderDates.findIndex(
-      (x) =>
-        x.day == mockNotifications[0].day &&
-        x.month == mockNotifications[0].month &&
-        x.year == mockNotifications[0].year
+      (x) => x.day == mockNotifications[0].day && x.month == mockNotifications[0].month && x.year == mockNotifications[0].year
     );
 
-    expect(component.renderDates[index].countNotifications).toEqual(
-      mockNotifications[0].countNotifications
-    );
+    expect(component.renderDates[index].countNotifications).toEqual(mockNotifications[0].countNotifications);
     expect(component.renderDates[index].notification).toBeTruthy();
     expect(component.renderDates[index].active).toBeTruthy();
   });
@@ -223,5 +210,14 @@ describe('CalendarComponent', () => {
 
     expect(component.renderDates.length).toBeGreaterThan(0);
     expect(component.renderDates[indexNext].month).toEqual(0);
+  });
+
+  test('private renderCalendar previous', () => {
+    component.currentMonth = 1;
+    component['renderCalendar']();
+    const indexPrevious = component.renderDates.findIndex((x) => x.prev);
+
+    expect(component.renderDates.length).toBeGreaterThan(0);
+    expect(component.renderDates[indexPrevious].month).toEqual(0);
   });
 });

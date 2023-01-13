@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
-import { EventEmitter } from '@angular/core';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
@@ -55,19 +54,5 @@ describe('ButtonComponent', () => {
     );
     fixture.detectChanges();
     expect(emitSpy).toHaveBeenCalled();
-  });
-
-  test('should loading status equal true with event emitter', () => {
-    const eventEmitter = new EventEmitter<boolean>();
-    component.loadingEmitter = eventEmitter;
-    eventEmitter.emit(true);
-    expect(component.disabled).toBeTruthy();
-  });
-
-  test('should loading status equal false with event emitter', () => {
-    const eventEmitter = new EventEmitter<boolean>();
-    component.loadingEmitter = eventEmitter;
-    eventEmitter.emit(false);
-    expect(component.disabled).toBeFalsy();
   });
 });

@@ -52,9 +52,7 @@ describe('TabComponent', () => {
   });
 
   test('click', () => {
-    fixture.nativeElement
-      .querySelector('nav ul li[data-id-tab="' + mockItem[0].id + '"]')
-      .click();
+    fixture.nativeElement.querySelector('ul li[data-id-tab="' + mockItem[0].id + '"]').click();
     component.click(mockItem[0]);
     component.byClick.subscribe({
       next: (x: TabItem) => {

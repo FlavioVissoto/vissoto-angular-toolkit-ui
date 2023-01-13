@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Size } from '../interface/size.interface';
 import { SelectComponent } from './select.component';
-import { SelectItem } from './src/interfaces/select.interface';
+import { SelectItem } from './interfaces/select.interface';
 
 describe('SelectComponent', () => {
   let component: SelectComponent;
@@ -81,31 +80,31 @@ describe('SelectComponent', () => {
   });
 
   test('getCss Rounded ExtraSmall', () => {
-    component.rounded = Size.ExtraSmall;
+    component.rounded = 'extra-small';
     let css = component['getCssRounded']();
     expect(css).toEqual('rounded-sm');
   });
 
   test('getCss Rounded Small', () => {
-    component.rounded = Size.Small;
+    component.rounded = 'small';
     let css = component['getCssRounded']();
     expect(css).toEqual('rounded');
   });
 
   test('getCss Rounded Base', () => {
-    component.rounded = Size.Base;
+    component.rounded = 'base';
     let css = component['getCssRounded']();
     expect(css).toEqual('rounded-md');
   });
 
   test('getCss Rounded Large', () => {
-    component.rounded = Size.Large;
+    component.rounded = 'large';
     let css = component['getCssRounded']();
     expect(css).toEqual('rounded-lg');
   });
 
   test('getCss Rounded ExtraLarge', () => {
-    component.rounded = Size.ExtraLarge;
+    component.rounded = 'extra-large';
     let css = component['getCssRounded']();
     expect(css).toEqual('rounded-full');
   });

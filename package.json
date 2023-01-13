@@ -16,18 +16,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng-packagr -p projects/ui/ng-package.json && npm run schematics:build",
+    "schematics:build": "tsc -p projects\\ui\\tsconfig.schematics.json && npm run schematics:copy-schema && npm run schematics:copy-collection",
+    "schematics:copy-schema": "copy projects\\ui\\src\\schematics\\ng-add\\schema.json dist\\src\\lib\\schematics\\ng-add",
+    "schematics:copy-collection": "copy projects\\ui\\src\\schematics\\collection.json dist\\src\\lib\\schematics\\",
     "build:local": "ng build && npm run pack",
     "publish": "npm run build && cd dist && npm publish --access public",
     "watch": "ng build --watch --configuration development",
     "test": "npx jest --no-cache --maxWorkers=1",
     "lint": "eslint . --ext .ts",
     "pack": "cd dist && npm pack",
-    "postinstall": "ngcc",
-    "build:lib": "ng-packagr -p projects/ui/ng-package.json && npm run schematics:build",
-    "schematics:build": "tsc -p projects\\ui\\tsconfig.schematics.json && npm run schematics:copy-schema && npm run schematics:copy-collection",
-    "schematics:copy-schema": "copy projects\\ui\\src\\schematics\\ng-add\\schema.json dist\\src\\lib\\schematics\\ng-add",
-    "schematics:copy-collection": "copy projects\\ui\\src\\schematics\\collection.json dist\\src\\lib\\schematics\\"
+    "postinstall": "ngcc"
   },
   "private": true,
   "husky": {

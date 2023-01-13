@@ -22,7 +22,6 @@ export class ButtonComponent {
   @Input() rounded: Rounded = 'none';
 
   @Input() disabled: boolean;
-  @Input() loadingEmitter: EventEmitter<boolean>;
 
   btnClick(): void {
     this.byClick.emit();
